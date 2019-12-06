@@ -1,0 +1,192 @@
+@import "./../colors.scss";
+
+#skyline-section {
+  color: $black;
+  display: grid;
+  height: 100vh;
+  overflow: hidden;
+  grid-template-rows: 50%;
+  background-color: $black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  &.loaded:before {
+    content: none;
+  }
+
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    transition: background 2s ease-out;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    align-self: end;
+
+    > * {
+      z-index: 2;
+    }
+
+    > svg {
+      height: 90px;
+
+      polygon {
+        stroke-width: 4px;
+        stroke: $white;
+        fill: none;
+
+        &:first-child {
+          stroke-dasharray: 580;
+          stroke-dashoffset: 580;
+          animation: spinner-1 5s ease 0.5s;
+        }
+
+        &:nth-child(2) {
+          stroke-dasharray: 400;
+          stroke-dashoffset: 400;
+          animation: spinner-2 5s ease 0.5s;
+        }
+      }
+    }
+
+    h1 {
+      font-weight: 300;
+      font-size: 2rem;
+      margin: 0.6rem 0 0;
+      animation: welcome-message 5s ease-in 0.5s;
+    }
+
+    p {
+      margin-top: 0.25rem;
+      font-size: 1.5rem;
+      font-weight: 100;
+      margin-bottom: 1.25rem;
+    }
+
+    span {
+      border-right: 1px solid $black;
+      border-bottom: 1px solid $black;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+      animation: float 1s ease-out infinite alternate;
+      border-color: inherit;
+    }
+  }
+}
+
+body.loaded {
+  overflow: auto;
+
+  #skyline-section {
+    background-image: url('/../../img/skyline.svg'), linear-gradient($black 49%, $blue1 55%, $amber3 60%, $amber2, $amber1 85%, $blue1 93%, $blue1);
+    background-size: 150%, 100% 1400%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: initial;
+    animation: day-progression 25s ease infinite alternate;
+
+    &:before {
+      background: transparent;
+    }
+
+    .content {
+      animation: contrast-day-progression 25s ease infinite alternate;
+
+      > svg polygon {
+        animation: contrast-day-progression 25s ease infinite alternate;
+      }
+    }
+  }
+}
+
+// Loading animations
+
+@keyframes spinner-1 {
+
+  60% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 580;
+  }
+}
+
+@keyframes spinner-2 {
+
+  60% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 400;
+  }
+}
+
+@keyframes welcome-message {
+
+  0% {
+    color: $black;
+  }
+
+  60% {
+    color: $white;
+  }
+
+  100% {
+    color: $black;
+  }
+}
+
+// Loaded state animations
+
+@keyframes day-progression {
+  from {
+    background-position: 0 101%, 0 100%;
+  }
+  to {
+    background-position: 0 101%, 0 50%;
+  }
+}
+
+@keyframes contrast-day-progression {
+  0% {
+    color: $black;
+    fill: $black;
+    border-color: $black;
+  }
+  65% {
+    color: $black;
+    fill: $black;
+    border-color: $black;
+  }
+  100% {
+    color: $white;
+    fill: $white;
+    border-color: $white;
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  to {
+    transform: translate3d(0, 10px, 0) rotate(45deg);
+  }
+}
+
+@import "responsive.scss";

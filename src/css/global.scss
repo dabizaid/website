@@ -1,0 +1,33 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 80% 1fr;
+  & > * {
+    grid-column: 2
+  }
+}
+
+section {
+  .section-header {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-weight: 400;
+  }
+}
+
+.center-block {
+  margin: 0 auto;
+}
+
+@import "./responsive.scss";

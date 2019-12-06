@@ -1,0 +1,11 @@
+@media (min-width: 500px) {
+  .container{
+    grid-template-columns: 1fr 70% 1fr;
+  }
+}
+
+@media (min-width: 1285px) {
+  .container{
+    grid-template-columns: 1fr 900px 1fr;
+  }
+}

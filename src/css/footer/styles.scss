@@ -1,0 +1,58 @@
+@import "../colors.scss";
+
+footer {
+  background: $black;
+  color: $light-gray;
+  padding: 2em 0;
+  a {
+    color: $white;
+  }
+  p a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .timeline {
+    display: grid;
+    grid-template-columns: max-content repeat(3, 20px) max-content repeat(3, 20px) max-content;
+    justify-items: center;
+    justify-self: center;
+    margin-top: 2em;
+    .version {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.85em;
+      cursor: pointer;
+      text-decoration: none;
+      .version__number{
+        color: $blue1;
+      }
+      .circle {
+        display: block;
+        border-radius: 50%;
+        width: 13px;
+        height: 13px;
+        background: white;
+        margin-bottom: 0.85em;
+      }
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) .circle {
+          background: transparentize($white, (1 - (1 / $i)));
+        }
+      }
+      &:hover .circle {
+        background: transparentize($white, 0.2);
+      }
+    }
+    .circle-divider {
+      display: block;
+      border-radius: 50%;
+      width: 5px;
+      height: 5px;
+      background: $light-gray;
+      margin-top: 4px;
+    }
+  }
+}

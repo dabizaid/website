@@ -1,0 +1,19 @@
+@media (min-width: 1024px) {
+  #skills {
+    background: url('/../../img/computer.jpg') #000;
+    background-size: 28rem;
+    background-repeat: no-repeat;
+    background-position: calc(17.5vw - 62px) 35%;
+
+    .tools__section-content {
+      justify-self: end;
+      max-width: 320px;
+    }
+  }
+}
+
+@media (min-width: 1285px) {
+  #skills {
+    background-position: calc((100vw - 900px) / 2) 35%;
+  }
+}

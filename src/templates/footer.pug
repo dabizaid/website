@@ -1,0 +1,15 @@
+footer.container
+    p #{COPYRIGHT}
+    p #{ANALYTICS_DISCLAIMER}
+        a(href='http://www.google.com/analytics' target='_blank') #{GOOGLE_ANALYTICS}
+        a(href='https://policies.google.com/privacy?hl=en' target='_blank') #{GOOGLE_PRIVACY_POLICY}
+    .timeline
+        each version, index in versions
+            a.version(href=`${version.url}`)
+                span.circle
+                span.version__number #{version.number}
+                span (#{version.year})
+            if index !== (versions.length - 1)
+                span.circle-divider
+                span.circle-divider
+                span.circle-divider

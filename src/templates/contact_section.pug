@@ -1,0 +1,17 @@
+section#contact_section
+    .card-container.container
+        figure.headshot
+            .image-container
+                img.center-block(src='./img/headshot.jpg' alt='Headshot')
+            figcaption.center-block #{GET_IN_TOUCH}
+        .contact-info
+            i.fab.fa-linkedin-in
+            a(href=LINKED_IN_PATH target='_blank' rel='noreferrer') in/diegoabizaid
+            i.fas.fa-envelope
+            a(href=`mailto:${EMAIL}`) #{EMAIL}
+            i.fas.fa-map-marker-alt
+            a New York, New York
+        a.resume__button(href=`${RESUME_PATH}` target='_blank') #{RESUME_TEXT}
+            include logo
+            include logo
+

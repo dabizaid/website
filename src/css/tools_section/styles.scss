@@ -1,0 +1,49 @@
+@import "../colors.scss";
+
+#skills {
+  background-color: $black;
+  color: $white;
+
+  .tools__section-content {
+    justify-self: start;
+    width: 100%;
+
+    .tools__code {
+      color: $code-secondary;
+      font-family: 'Roboto Mono', monospace;
+      margin-bottom: 10rem;
+
+      .tools__tagline {
+        margin: 3rem 0;
+        max-width: 20rem;
+      }
+
+      .tools__category-container {
+        margin-bottom: 3rem;
+
+        .tools__category-name {
+          color: $blue1;
+        }
+
+        .tools__category-list {
+          margin: 0;
+          list-style: none;
+          padding-left: 1rem;
+
+          li {
+            &.spaced {
+              padding: 2px 0;
+            }
+
+            .tools__category-item {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@import "responsive";

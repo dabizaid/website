@@ -1,0 +1,41 @@
+@import '../colors';
+
+#about__section {
+  background-color: $black;
+  padding: 3rem 0 10rem;
+  color: $white;
+  grid-template-rows: max-content max-content;
+  .about__section-content {
+    p {
+      font-weight: 300;
+      span {
+        font-weight: 600;
+      }
+    }
+    .section__content-right {
+      display: none;
+      justify-self: end;
+      align-self: center;
+      svg {
+        fill: none;
+        stroke-width: 4px;
+        stroke: $code-secondary;
+        width: 100px;
+        polygon {
+          stroke-dasharray: 120;
+          animation: logo-tracing 3s linear infinite;
+        }
+      }
+    }
+  }
+}
+@keyframes logo-tracing {
+  from {
+    stroke-dashoffset: 7;
+  }
+  to {
+    stroke-dashoffset: 487;
+  }
+}
+
+@import "responsive";

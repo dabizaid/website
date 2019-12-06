@@ -1,0 +1,22 @@
+@media (min-width: 450px){
+  body.loaded  {
+    #skyline-section {
+      background-size: 100%, 100% 1400%;
+    }
+  }
+}
+
+@media (max-height: 479px) {
+  #skyline-section {
+    grid-template-rows: 70%;
+    .content > svg {
+      height: 70px;
+    }
+  }
+}
+
+@media (max-height: 479px) and (min-width: 580px) {
+  #skyline-section {
+    grid-template-rows: 60%;
+  }
+}

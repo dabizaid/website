@@ -1,0 +1,18 @@
+mixin splitIntoParagraphs(text)
+    - var splitByLine = text.split('\n')
+    - for (var i = 0; i < splitByLine.length; i++)
+        if(i === 0)
+            p
+                span #{HELLO_WORLD}
+                | #{splitByLine[i]}
+        else
+            p= splitByLine[i]
+
+section#about__section.container
+    .about__section-content
+        .section__content-left
+            h1.section-header #{ABOUT}
+            +splitIntoParagraphs(ABOUT_ME)
+        .section__content-right
+            include logo
+

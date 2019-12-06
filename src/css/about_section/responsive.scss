@@ -1,0 +1,17 @@
+@media (min-width: 768px) {
+  #about__section .about__section-content {
+    display: grid;
+    grid-template-columns: 490px 320px;
+    justify-content: space-between;
+    .section__content-right {
+      display: initial;
+      justify-self: center;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1080px){
+  #about__section .about__section-content {
+    grid-template-columns: 250px 320px;
+  }
+}

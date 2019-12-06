@@ -1,0 +1,39 @@
+
+section#skills.container
+    .tools__section-content
+        h1.section-header #{SKILLS_TAGLINE}
+        .tools__code
+            p.tools__tagline /* #{TOOLS_SECTION_DESCRIPTION} */
+            .tools__category-container
+                |&lt#[span.tools__category-name #{toolCategories[0].name}]&gt
+                ul.tools__category-list
+                    each tool in toolCategories[0].tech
+                        li.spaced &lt#[span.tools__category-item #{tool}]/&gt
+                |&lt/#[span.tools__category-name #{toolCategories[0].name}]&gt
+            .tools__category-container
+                | .#[span.tools__category-name #{toolCategories[1].name}] {
+                ul.tools__category-list
+                    each tool in toolCategories[1].tech
+                        li #[span.tools__category-item #{tool}]: "100%"
+                | }
+            .tools__category-container
+                | #[span.tools__category-name #{toolCategories[2].name}]() {
+                ul.tools__category-list
+                    -for(var i = 0; i < toolCategories[2].tech.length; i++)
+                        li #[span.tools__category-item #{toolCategories[2].tech[i]}](); #{i !== 2 ? "" : "  // DB"}
+                | }
+            .tools__category-container
+                | (#[span.tools__category-name #{toolCategories[3].name}]) => ({
+                ul.tools__category-list
+                    each tool in toolCategories[3].tech
+                        li #[span.tools__category-item #{tool}]: true,
+                    li ...#[span.tools__category-item more]
+                | })
+
+
+
+
+
+
+
+
