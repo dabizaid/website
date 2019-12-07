@@ -1,0 +1,1 @@
+!function(){var o=document.querySelector("body");setTimeout(function(){o.classList.toggle("loaded"),window.scrollTo(0,0),setTimeout(function(){document.querySelector("#skyline-section").classList.toggle("loaded")},2e3)},6e3),document.getElementById("scrollButton").onclick=function(){document.querySelector("#about__section").scrollIntoView({behavior:"smooth"})}}();
